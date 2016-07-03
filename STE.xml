@@ -1,0 +1,105 @@
+<protocol name="STE">
+
+    <copyright>
+ Hello,
+  You may only modify, (re)distribute or do anything else with anything this licens has effect on with explicit permission.
+ Bye!
+    </copyright>
+
+    <interface name="ste_shell" version="1">
+        <request name="create_ste_shell_surface">
+            <description summary="">
+                ...
+            </description>
+            <arg name="id" type="new_id" interface="ste_shell_surface" />
+            <arg name="surface" type="object" interface="wl_surface" />
+        </request>
+        <request name="create_ste_softkey">
+            <description summary="">
+                ...
+            </description>
+            <arg name="id" type="new_id" interface="ste_softkey" />
+            <arg name="softkey_id" type="uint" />
+        </request>
+        <request name="create_ste_softkey_with_surface">
+            <description summary="">
+                ...
+            </description>
+            <arg name="id" type="new_id" interface="ste_softkey" />
+            <arg name="softkey_id" type="uint" />
+            <arg name="surface" type="object" interface="wl_surface" />
+        </request>
+    </interface>
+    <interface name="ste_shell_surface" version="1">
+        <enum name="state">
+            <description summary="">
+                ...
+            </description>
+            <entry name="normal" value="0" />
+            <entry name="minimal" value="1" />
+            <entry name="maximal" value="2" />
+        </enum>
+        <event name="configure">
+            <description summary="">
+                ...
+            </description>
+            <arg name="width" type="uint" summary="..." />
+            <arg name="height" type="uint" summary="..." />
+            <arg name="state" type="uint" summary="..." />
+        </event>
+        <request name="resize">
+            <description summary="">
+                ...
+            </description>
+            <arg name="state" type="uint" summary="..." />
+        </request>
+        <event name="broadcast_available_softkey">
+            <description summary="">
+                ...
+            </description>
+            <arg name="softkey_id" type="uint" />
+            <arg name="hint" type="string" />
+        </event>
+    </interface>
+    <interface name="ste_softkey" version="1">
+        <enum name="state">
+            <description summary="">
+                ...
+            </description>
+            <entry name="active" value="1" />
+            <entry name="inactive" value="2" />
+            <entry name="outofscope" value="3" />
+        </enum>
+        <event name="state_changed">
+            <description summary="">
+                ...
+            </description>
+            <arg name="state" type="uint"/>
+        </event>
+        <event name="click">
+            <description summary="">
+                ...
+            </description>
+        </event>
+        <event name="rotated">
+            <description summary="">
+                ...
+            </description>
+            <arg name="ticks" type="int"/>
+            <arg name="angle" type="int"/>
+        </event>
+        <event name="size_hint">
+            <description summary="">
+                ...
+            </description>
+            <arg name="width" type="uint"/>
+            <arg name="height" type="uint"/>
+        </event>
+        <request name="set_surface">
+            <description summary="">
+                ...
+            </description>
+            <arg name="surface" type="object" interface="wl_surface" />
+        </request>
+    </interface>
+</protocol>
