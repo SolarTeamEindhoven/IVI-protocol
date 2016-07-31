@@ -3,5 +3,8 @@
 <node xmlns:doc="http://www.freedesktop.org/dbus/1.0/doc.dtd" name="/nl/solarteameindhoven/vehicledata">
     <interface name="nl.solarteameindhoven.vehicledata">
         <property name="value" type="v" access="read" />
+        <signal name="valueChanged">
+            <arg name="value" type="v" />
+        </signal>
     </interface>
 </node>
