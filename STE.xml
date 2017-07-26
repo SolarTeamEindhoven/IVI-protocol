@@ -2,7 +2,7 @@
 
     <copyright>
  Hello,
-  You may only modify, (re)distribute or do anything else with anything this licens has effect on with explicit permission.
+  You may only modify, (re)distribute or do anything else with anything this licence has effect on with explicit permission.
  Bye!
     </copyright>
 
@@ -31,7 +31,7 @@
         </request>
     </interface>
     <interface name="ste_shell_surface" version="1">
-        <enum name="state">
+        <enum name="sizeState">
             <description summary="">
                 ...
             </description>
@@ -39,20 +39,34 @@
             <entry name="minimal" value="1" />
             <entry name="maximal" value="2" />
         </enum>
+        <enum name="visibilityState">
+            <description summary="">
+                ...
+            </description>
+            <entry name="invisable" value="0" />
+            <entry name="visable" value="1" />
+            <entry name="active" value="2" />
+        </enum>
         <event name="configure">
             <description summary="">
                 ...
             </description>
             <arg name="width" type="uint" summary="..." />
             <arg name="height" type="uint" summary="..." />
-            <arg name="state" type="uint" summary="..." />
+            <arg name="sizeState" type="uint" summary="..." />
         </event>
         <request name="resize">
             <description summary="">
                 ...
             </description>
-            <arg name="state" type="uint" summary="..." />
+            <arg name="sizeState" type="uint" summary="..." />
         </request>
+        <event name="visibilityState">
+            <description summary="">
+                ...
+            </description>
+            <arg name="visibilityState" type="uint" summary="..." />
+        </event>
         <event name="broadcast_available_softkey">
             <description summary="">
                 ...
