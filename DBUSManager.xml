@@ -3,5 +3,6 @@
 <node xmlns:doc="http://www.freedesktop.org/dbus/1.0/doc.dtd" name="/nl/solarteameindhoven/manager">
     <interface name="nl.solarteameindhoven.manager">
         <property name="vehicle_data_keys" type="as" access="read" />
+        <property name="vehicle_setting_keys" type="as" access="read" />
     </interface>
 </node>
